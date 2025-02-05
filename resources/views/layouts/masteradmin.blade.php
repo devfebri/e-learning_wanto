@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>E-LEARNING SMPN 1 MUARO JAMBI</title>
+	<title>E-LEARNING SMAN 2 Batang Hari</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -62,7 +62,7 @@
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">&copy; 2025 Devisi <a href="#">IT UNAMA</a> , All Rights Reserved | Bug report to <a href="#">swanton@gmail.com</a> </p>
+				<p class="copyright">&copy; 2025 Devisi <a href="#">IT UNAMA</a> , All Rights Reserved | Bug report to <a href="#">suatonbae@gmail.com</a> </p>
 			</div>
 		</footer>
 	</div>
