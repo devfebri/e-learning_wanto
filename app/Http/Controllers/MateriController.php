@@ -76,17 +76,26 @@ class MateriController extends Controller
         $materi = Materi::findOrFail($id);
         $file='/materi/'.$materi->file_materi;
         $path=str_replace('\\','/',public_path()) ;
-        // dd($path.$del);
-        if(file_exists($path.$file)){
-            unlink($path.$file);
+        // dd($materi->link);
+
+        if($materi->file_materi!=null){
+            if(file_exists($path.$file)){
+                unlink($path.$file);
+                $materi->delete();
+                
+                return redirect('/'.auth()->user()->role.'/materi')->with('sukses', 'Data Berhasil Dihapus');
+            }
+            else{
+                //  $materi->delete();
+                
+                return redirect('/'.auth()->user()->role.'/materi')->with('gagal', 'Gagal Menghapus file');
+            }
+        }else{
             $materi->delete();
-            
-            return redirect('/admin/materi')->with('sukses', 'Data Berhasil Dihapus');
+                
+                return redirect('/'.auth()->user()->role.'/materi')->with('sukses', 'Data Berhasil Dihapus');
         }
-        else{
-            
-            return redirect('/admin/materi')->with('gagal', 'Gagal Menghapus file');
-        }
+        
         
       
     }

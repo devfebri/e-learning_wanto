@@ -183,7 +183,13 @@
                         <td>{{ ++$key }}</td>
                         <td>{{ $materi->nama }}</td>
                         <td>{{ $materi->mapel->nama }}</td>
-                        <td>{{ $materi->link }}</td>
+                        <td>
+                            @if($materi->link!=null)
+                            <a href="{{ $materi->link }}" target="_blank" class="btn btn-primary btn-sm">Link</a>
+                            @else
+                            <i>Null</i>
+                            @endif
+                        </td>
                         <td>{{$materi->kelas->nama}}</td>
                         <td>{{ $materi->file_materi }}</td>
                         @if(auth()->user()->role=='admin')
