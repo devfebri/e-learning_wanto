@@ -70,7 +70,8 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa = \App\Siswa::find($id);
-        return view('siswa/edit', ['siswa' => $siswa]);
+        $kelas = Kelas::all();
+        return view('siswa/edit', compact('siswa', 'kelas'));
     }
 
     public function update(Request $request, $id)

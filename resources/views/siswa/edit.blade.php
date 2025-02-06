@@ -20,6 +20,17 @@
                             <label for="exampleInputEmail1">Nama</label>
                             <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" value="{{ $siswa->nama }}">
                         </div>
+                        <div class="form-group {{ $errors->has('kelas_id')?' has-error':'' }}">
+                            <label for="exampleInputEmail1">Kelas</label>
+                            <select name="kelas_id" class="form-control" id="exampleFormControlSelect1">
+                                <option value=""> - Pilih Kelas - </option>
+                                @foreach($kelas as $datakelas)
+                                <option @if($siswa->kelas_id==$datakelas->id) selected @endif value="{{ $datakelas->id }}"> {{ $datakelas->nama }} </option>
+
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Agama</label>
                             <select name="agama" class="form-control" id="exampleFormControlSelect1">
@@ -51,7 +62,7 @@
                         </div>
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="reset" class="btn btn-secondary" onclick="history.back()">Close</button>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>

@@ -145,8 +145,10 @@
 							<div class="form-group {{ $errors->has('kelas_id')?' has-error':'' }}">
 								<label for="exampleInputEmail1">Kelas</label>
 								<select name="kelas_id" class="form-control" id="exampleFormControlSelect1">
+										<option value=""> - Pilih Kelas - </option>
+
 									@foreach($kelas as $datakelas)
-										<option value="{{ $datakelas->id }}"> {{ $datakelas->nama }} </option>
+										<option  value="{{ $datakelas->id }}"> {{ $datakelas->nama }} </option>
 									@endforeach
 								</select>
 							</div>
@@ -189,7 +191,7 @@
 								@endif
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="reset" class="btn btn-secondary" >Reset</button>
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
